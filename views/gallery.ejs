@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="/stylesheet/gallery.css">
+</head>
+<body>
+    <h1>Gallery</h1>
+    <ul>
+        <% arts.forEach(art => { %>
+            <li>
+                <h2><%= art.title %></h2>
+                <p><%= art.description %></p>
+                <img src="<%= art.imageUrl %>" alt="<%= art.title %>">
+                <p>Artist: <%= art.artist %></p>
+                <p>Uploaded on: <%= art.createdAt.toDateString() %></p>
+            </li>
+        <% }) %>
+    </ul>
+    <a href="/">Home</a>
+</body>
+</html>
